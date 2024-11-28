@@ -2,18 +2,20 @@
 #ifndef INTBINARYTREE_H
 #define INTBINARYTREE_H
 
+#include <string>
+
 // The IntBinaryTree class manages a binary tree of integers.
 class IntBinaryTree {
 private:
    // TreeNode is a private structure for IntBinaryTree nodes.
    struct TreeNode {
-      int value;         // The value in the node
+      string value;         // The value in the node
       TreeNode *left;    // Pointer to left child node
       TreeNode *right;   // Pointer to right child node
    };
 
    // root points to the topmost node of the tree.
-   TreeNode *root;      
+   TreeNode *root;
 
    // Private member functions for internal operations.
    void insert(TreeNode *&, TreeNode *&);
@@ -32,9 +34,9 @@ public:
    ~IntBinaryTree()    { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
-   void insertNode(int);
-   bool searchNode(int);
-   void remove(int);
+   void insertNode(string);
+   bool searchNode(string);
+   void remove(string);
 
    // Public wrappers for tree traversal functions.
    void displayInOrder() const     {  displayInOrder(root); }
