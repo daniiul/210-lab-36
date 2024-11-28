@@ -6,18 +6,20 @@ using namespace std;
 
 int main() {
 
+    IntBinaryTree bst;
+
     ifstream inputFile("codes.txt");
 
     if(!inputFile.is_open())
     {
         cout << "File failed to open!" << endl;
-        return;
+        return 0;
     }
 
     string temp;
     while(getline(inputFile, temp))
     {
-        insertNode(temp);
+        bst.insertNode(temp);
     }
 
     return 0;
