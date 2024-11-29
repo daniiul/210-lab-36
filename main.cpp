@@ -1,8 +1,11 @@
 #include <iostream>
 #include "IntBinaryTree.h"
+#include "IntBinaryTree.cpp"
 #include <fstream>
 #include <string>
 using namespace std;
+
+int menu();
 
 int main() {
 
@@ -22,5 +25,12 @@ int main() {
         bst.insertNode(temp);
     }
 
+
+
     return 0;
+}
+
+int menu()
+{
+
 }

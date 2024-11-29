@@ -1,6 +1,7 @@
 // Implementation file for the IntBinaryTree class
 #include <iostream>
 #include "IntBinaryTree.h"
+#include <string>
 using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.
@@ -9,7 +10,7 @@ using namespace std;
 void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
    if (!nodePtr)
       nodePtr = newNode;                  // Insert the node.
-   else if (newNode->value < nodePtr->value)
+   else if ((newNode->value).compare(nodePtr->value) < 0)
       insert(nodePtr->left, newNode);     // Search the left branch
    else
       insert(nodePtr->right, newNode);    // Search the right branch
@@ -51,7 +52,7 @@ bool IntBinaryTree::searchNode(string value) {
    while (nodePtr)    {
       if (value.compare(nodePtr->value))
          return true;
-      else if (value < nodePtr->value)
+      else if (value.compare(nodePtr->value) < 0)
          nodePtr = nodePtr->left;
       else
          nodePtr = nodePtr->right;
@@ -68,9 +69,9 @@ void IntBinaryTree::remove(string value) {
 // deleteNode deletes the node whose value
 // member is the same as num.
 void IntBinaryTree::deleteNode(string value, TreeNode *&nodePtr) {
-   if (value < nodePtr->value)
+   if (value.compare(nodePtr->value) < 0)
       deleteNode(value, nodePtr->left);
-   else if (value > nodePtr->value)
+   else if (value.compare(nodePtr->value) > 0)
       deleteNode(value, nodePtr->right);
    else
       makeDeletion(nodePtr);
