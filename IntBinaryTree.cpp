@@ -50,7 +50,7 @@ bool IntBinaryTree::searchNode(string value) {
    TreeNode *nodePtr = root;
 
    while (nodePtr)    {
-      if (value.compare(nodePtr->value))
+      if (value.compare(nodePtr->value) == 0)
          return true;
       else if (value.compare(nodePtr->value) < 0)
          nodePtr = nodePtr->left;

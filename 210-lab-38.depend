@@ -1,10 +1,16 @@
 # depslib dependency file v1.0
-1732774700 source:c:\users\guine\onedrive\documents\codeblocks\210-lab-38\main.cpp
+1732929155 source:c:\users\guine\onedrive\documents\codeblocks\210-lab-38\main.cpp
 	<iostream>
 	"IntBinaryTree.h"
+	"IntBinaryTree.cpp"
 	<fstream>
 	<string>
 
-1732774737 c:\users\guine\onedrive\documents\codeblocks\210-lab-38\intbinarytree.h
+1732869982 c:\users\guine\onedrive\documents\codeblocks\210-lab-38\intbinarytree.h
+	<string>
+
+1732929227 c:\users\guine\onedrive\documents\codeblocks\210-lab-38\intbinarytree.cpp
+	<iostream>
+	"IntBinaryTree.h"
 	<string>
 

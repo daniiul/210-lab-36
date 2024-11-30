@@ -1,3 +1,5 @@
+// COMSC-210 | 210-lab-38 | Daniil Malakhov
+// IDE used: Codeblocks
 #include <iostream>
 #include "IntBinaryTree.h"
 #include "IntBinaryTree.cpp"
@@ -12,22 +14,26 @@ int main() {
     IntBinaryTree bst;
 
     ifstream inputFile("codes.txt");
-
+    // checks if file is open
     if(!inputFile.is_open())
     {
         cout << "File failed to open!" << endl;
         return 0;
     }
 
+    // reads the codes from the file into the binary tree
     string temp;
     while(getline(inputFile, temp))
     {
         bst.insertNode(temp);
     }
 
+    // simulates the menu
     int in = menu();
+    // runs program until user exits
     while(in != 5)
     {
+        // add a node
         if(in == 1)
         {
             string code;
@@ -35,6 +41,7 @@ int main() {
             cin >> code;
             bst.insertNode(code);
         }
+        // deletes a node
         else if (in == 2)
         {
             string code;
@@ -42,6 +49,7 @@ int main() {
             cin >> code;
             bst.remove(code);
         }
+        // finds a node
         else if (in == 3)
         {
             string code;
@@ -53,16 +61,22 @@ int main() {
             else
                 cout << "Node has not been found.";
         }
+        // modifies a node
         else if (in == 4)
         {
             string code;
             string newcode;
             cout << "Which node would you like to modify: ";
             cin >> code;
-            cout << endl;
-            cout << "What would you like to put into it: ";
-            cin >> newcode;
-            bst.modifyNode(code, newcode);
+            bool found = bst.searchNode(code);
+            if(found == true)
+            {
+                cout << "What would you like to put into it: ";
+                cin >> newcode;
+                bst.modifyNode(code, newcode);
+            }
+            else
+                cout << "Node has not been found.";
         }
         cout << endl;
         in = menu();
@@ -71,6 +85,9 @@ int main() {
     return 0;
 }
 
+// displays the menu
+// arguments: none
+// returns: integer that represents choice user made
 int menu()
 {
     int entry;
