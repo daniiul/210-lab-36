@@ -40,7 +40,7 @@ int main() {
             string code;
             cout << "Which code would you like to delete: ";
             cin >> code;
-            bst.deleteNode(code);
+            bst.remove(code);
         }
         else if (in == 3)
         {
@@ -56,12 +56,16 @@ int main() {
         else if (in == 4)
         {
             string code;
-            cout << "Which node would you like to modif: ";
+            string newcode;
+            cout << "Which node would you like to modify: ";
             cin >> code;
-            bst.insertNode(code);
+            cout << endl;
+            cout << "What would you like to put into it: ";
+            cin >> newcode;
+            bst.modifyNode(code, newcode);
         }
+        cout << endl;
         in = menu();
-
     }
 
     return 0;
@@ -71,11 +75,11 @@ int menu()
 {
     int entry;
     cout << "Binary Tree Menu:" << endl;
-    cout << "       [1] Add a node" << end;
-    cout << "       [2] Delete a node" << end;
-    cout << "       [3] Find a node" << end;
-    cout << "       [4] Modify a node" << end;
-    cout << "       [5] Exit" << end;
+    cout << "       [1] Add a node" << endl;
+    cout << "       [2] Delete a node" << endl;
+    cout << "       [3] Find a node" << endl;
+    cout << "       [4] Modify a node" << endl;
+    cout << "       [5] Exit" << endl;
     do{
         cout << "Enter: ";
         cin >> entry;

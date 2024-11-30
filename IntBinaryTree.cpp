@@ -60,6 +60,23 @@ bool IntBinaryTree::searchNode(string value) {
    return false;
 }
 
+bool IntBinaryTree::modifyNode(string value, string newval) {
+   TreeNode *nodePtr = root;
+
+   while (nodePtr)    {
+      if (value.compare(nodePtr->value))
+      {
+          nodePtr->value = newval;
+          return true;
+      }
+      else if (value.compare(nodePtr->value) < 0)
+         nodePtr = nodePtr->left;
+      else
+         nodePtr = nodePtr->right;
+   }
+   return false;
+}
+
 // remove calls deleteNode to delete the
 // node whose value member is the same as num.
 void IntBinaryTree::remove(string value) {
